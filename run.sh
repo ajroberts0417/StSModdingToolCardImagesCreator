@@ -1,0 +1,1 @@
+java -jar target/StSCardImagesCreator-0.0.5-jar-with-dependencies.jar

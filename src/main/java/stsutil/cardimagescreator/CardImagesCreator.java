@@ -1,15 +1,16 @@
 package stsutil.cardimagescreator;
 
-import org.apache.commons.io.FilenameUtils;
-
-import javax.imageio.ImageIO;
-import java.awt.*;
+import java.awt.Color;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+
+import javax.imageio.ImageIO;
+
+import org.apache.commons.io.FilenameUtils;
 
 public class CardImagesCreator {
 
@@ -56,18 +57,18 @@ public class CardImagesCreator {
             BufferedImage attackPortraitImage = maskImage(portraitImage, attackPortraitImageMask);
             BufferedImage skillPortraitImage = maskImage(portraitImage, skillPortraitImageMask);
             BufferedImage powerPortraitImage = maskImage(portraitImage, powerPortraitImageMask);
-            saveBufferedImageInFile(attackPortraitImage, "images/Attacks/" + FilenameUtils.getBaseName(file.getName()) + "_p." + FilenameUtils.getExtension(file.getName()));
-            saveBufferedImageInFile(skillPortraitImage, "images/Skills/" + FilenameUtils.getBaseName(file.getName()) + "_p." + FilenameUtils.getExtension(file.getName()));
-            saveBufferedImageInFile(powerPortraitImage, "images/Powers/" + FilenameUtils.getBaseName(file.getName()) + "_p." + FilenameUtils.getExtension(file.getName()));
+            saveBufferedImageInFile(attackPortraitImage, "images/attack/" + FilenameUtils.getBaseName(file.getName()) + "_p." + FilenameUtils.getExtension(file.getName()));
+            saveBufferedImageInFile(skillPortraitImage, "images/skill/" + FilenameUtils.getBaseName(file.getName()) + "_p." + FilenameUtils.getExtension(file.getName()));
+            saveBufferedImageInFile(powerPortraitImage, "images/power/" + FilenameUtils.getBaseName(file.getName()) + "_p." + FilenameUtils.getExtension(file.getName()));
         }
 
         BufferedImage attackImage = maskImage(cardImage, attackImageMask);
         BufferedImage skillImage = maskImage(cardImage, skillImageMask);
         BufferedImage powerImage = maskImage(cardImage, powerImageMask);
 
-        saveBufferedImageInFile(attackImage, "images/Attacks/" + file.getName());
-        saveBufferedImageInFile(skillImage, "images/Skills/" + file.getName());
-        saveBufferedImageInFile(powerImage, "images/Powers/" + file.getName());
+        saveBufferedImageInFile(attackImage, "images/attack/" + file.getName());
+        saveBufferedImageInFile(skillImage, "images/skill/" + file.getName());
+        saveBufferedImageInFile(powerImage, "images/power/" + file.getName());
 
     }
 
